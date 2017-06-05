@@ -65,6 +65,26 @@ public class UserController {
 
 	}
 
+
+	@RequestMapping(value = "/getByName", method = RequestMethod.GET)
+	@ResponseBody
+	public String getByName(@RequestParam(value = "name") String name) {
+
+		String id;
+		try {
+			User user = userDao.findByName(name);
+			id = user.getName();
+
+		} catch (Exception e) {
+			return "user not found";
+
+		}
+
+		return "user found and  id : " + id;
+
+	}
+
+
 	@RequestMapping(value = "/update", method = RequestMethod.PUT)
 	@ResponseBody
 	public String updateUser(@RequestParam(value = "id") long id, @RequestParam(value = "email") String email,
