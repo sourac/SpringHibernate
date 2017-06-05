@@ -19,3 +19,9 @@ spring.jpa.show-sql=true
 spring.jpa.hibernate.ddl-auto=update
 
 server.port=84
+
+Download the project and import as maven project.
+Then Do maven clean and install.
+Also In your mysql create a database named "SpringBootHibernate".
+and provide the username and password for the connection.
+just like mentioneda above in the file.
