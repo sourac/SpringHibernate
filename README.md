@@ -24,4 +24,4 @@ Download the project and import as maven project.
 Then Do maven clean and install.
 Also In your mysql create a database named "SpringBootHibernate".
 and provide the username and password for the connection.
-just like mentioneda above in the file.
+just like mentioned above in the file.
