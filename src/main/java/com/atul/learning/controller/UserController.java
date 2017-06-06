@@ -53,18 +53,19 @@ public class UserController {
 	@ResponseBody
 	public String getByEmail(@RequestParam(value = "email") String email) {
 		String userId;
+		String userName;
 		try {
 			User user = userDao.findByEmail(email);
 			userId = String.valueOf(user.getId());
+			userName = user.getName();
 
 		} catch (Exception e) {
 			return "User not found";
 
 		}
-		return "the user id : " + userId;
+		return "the user id : " + userId + " and name : " + userName;
 
 	}
-
 
 	@RequestMapping(value = "/getByName", method = RequestMethod.GET)
 	@ResponseBody
@@ -83,7 +84,6 @@ public class UserController {
 		return "user found and  id : " + id;
 
 	}
-
 
 	@RequestMapping(value = "/update", method = RequestMethod.PUT)
 	@ResponseBody
